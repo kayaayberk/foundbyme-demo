@@ -1,9 +1,9 @@
-import Image from "next/image";
-
 export default function Home() {
-  return (
-    <div>
-      <h1>Foundby.me</h1>
-    </div>
-  );
+	return (
+		<div>
+			<section>Hero</section>
+			<section>section1</section>
+			<section>section2</section>
+		</div>
+	)
 }
