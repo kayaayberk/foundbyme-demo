@@ -11,10 +11,16 @@ import productCard from '@/public/page-landing/hero/product-card.png'
 import statsCard from '@/public/page-landing/hero/stats-card.png'
 import semiRounded1 from '@/public/page-landing/hero/semi-rounded-1.png'
 import semiRounded2 from '@/public/page-landing/hero/semi-rounded-2.png'
+import bgGroup from '@/public/page-landing/section-2/bg-group.png'
 import avatar from '@/public/page-landing/hero/avatar.png'
+import table1 from '@/public/page-landing/section-2/table-1.png'
+import table2 from '@/public/page-landing/section-2/table-2.png'
+import table3 from '@/public/page-landing/section-2/table-3.png'
+
 import { AnimatePresence, motion } from 'motion/react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { ChevronRight } from 'lucide-react'
 
 export default function Home() {
 	const [scale, setScale] = useState(1)
@@ -374,7 +380,79 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section>section1</section>
+			<section className='relative w-full'>
+				<div className='relative flex w-full flex-col items-start justify-between md:gap-4 gap-20 px-5 md:py-40 py-28 md:flex-row lg:px-20 xl:px-40'>
+					<div className='flex flex-col gap-10 md:basis-1/2 basis-full'>
+						<h1>Gelir paylaşımı kampanyalarınızı doğrudan kendi siteniz üzerinden kurgulayın.</h1>
+						<p className='text-primary/70'>
+							Foundby.me mevcut sisteminize kolayca entegre olur; komisyon oranlarını belirlemenize, geniş influencer ağıyla kampanyaları hızlıca başlatmanıza, performansları anlık olarak izlemenize ve ödemeleri tek fatura üzerinden kolayca yönetmenize imkân tanır.
+						</p>
+						<p className='text-primary/70'>
+							Tüm trafik doğrudan sitenize yönlenir. Böylece ziyaretçi ve müşteri verilerinize tam erişim sağlar, yeniden hedefleme kampanyaları oluşturabilirsiniz. Pazaryerlerine ödenen ekstra komisyonlar olmadan, yalnızca kendi belirlediğiniz oranlar üzerinden ödeme yaparsınız.
+						</p>
+						<Button
+							variant='primary'
+							size='lg'
+							className='text-primary font-semibold p-8 flex items-center gap-4 bg-accent hover:bg-accent-foreground border-accent-foreground w-min z-10 cursor-pointer rounded-lg border-1 text-xl transition-all duration-500'>
+							Kayıt Ol
+							<ChevronRight className='!w-6 !h-6' />
+						</Button>
+					</div>
+					<motion.div
+						initial={{ opacity: 0, scale: 0.8, y: 50 }}
+						whileInView={{ opacity: 1, scale: 1, y: 0 }}
+						exit={{ opacity: 0, scale: 0.8, y: 50 }}
+						transition={{ duration: 0.8, ease: "easeOut" }}
+						viewport={{ once: true, amount: 0.3 }}
+						className='z-[-1] h-full'
+					>
+						<Image src={bgGroup} alt='hero' width={700} height={500} />
+					</motion.div>
+					<div className='absolute -bottom-20 -left-1/2 translate-x-1/2 translate-y-1/2 w-full h-full'>
+						{/* Table 1 - Left positioned */}
+						<AnimatePresence>
+							<motion.div
+								initial={{ opacity: 0, x: -100, y: 50 }}
+								whileInView={{ opacity: 1, x: 0, y: 0 }}
+								exit={{ opacity: 0, x: -100, y: 50 }}
+								transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+								viewport={{ once: true, amount: 0.3 }}
+								className='z-[5] absolute left-40 top-40'
+							>
+								<Image src={table1} alt='table1' width={600} height={350} />
+							</motion.div>
+						</AnimatePresence>
+
+						{/* Table 2 - Center positioned */}
+						<AnimatePresence>
+							<motion.div
+								initial={{ opacity: 0, y: 100 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								exit={{ opacity: 0, y: 100 }}
+								transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+								viewport={{ once: true, amount: 0.3 }}
+								className='z-[4] absolute left-1/2 top-10 -translate-x-1/3'
+							>
+								<Image src={table2} alt='table2' width={700} height={400} />
+							</motion.div>
+						</AnimatePresence>
+
+						{/* Table 3 - Right positioned */}
+						<AnimatePresence>
+							<motion.div
+								initial={{ opacity: 0, x: 100, y: 50 }}
+								whileInView={{ opacity: 1, x: 0, y: 0 }}
+								exit={{ opacity: 0, x: 100, y: 50 }}
+								transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+								viewport={{ once: true, amount: 0.3 }}
+								className='absolute right-0 top-3/4 z-[1]'
+							>
+								<Image src={table3} alt='table3' width={500} height={350} />
+							</motion.div>
+						</AnimatePresence>
+					</div>
+				</div>
+			</section>
 			<section>section2</section>
 		</div>
 	)

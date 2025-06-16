@@ -173,10 +173,10 @@
 	}
 
 	h1 {
-		@apply text-[30px] leading-[40px] font-bold lg:text-[40px] xl:text-[57px] xl:leading-[55px];
+		@apply text-[30px] leading-[40px] font-bold lg:text-[40px] xl:text-[52px] xl:leading-[55px] text-primary;
 	}
 
 	p {
-		@apply flex flex-col gap-0.5 text-[16px] font-[400] lg:text-[22px] xl:text-[26px] xl:leading-[30px];
+		@apply flex flex-col gap-0.5 text-[16px] font-[400] lg:text-[22px] xl:text-[26px] xl:leading-[30px] text-primary/70;
 	}
 }
