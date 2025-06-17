@@ -474,7 +474,7 @@ const Section3Content = () => (
 	<div className='z-[40] flex flex-col gap-10 md:basis-1/2 basis-full'>
 		<Badge
 			variant='secondary'
-			className='text-primary rounded-sm bg-purple-100 text-xs font-semibold'>
+			className='text-primary rounded-sm bg-yellow-100 text-xs font-semibold'>
 			İçerik üreticileri için
 		</Badge>
 		<h1>Favori markalarınızla komisyona dayalı iş birlikleri kurun.</h1>
@@ -526,7 +526,7 @@ export default function Home() {
 			</section>
 
 			<section className='relative w-full bg-purple-100'>
-				<div className='relative flex w-full flex-col items-center justify-between md:gap-20 gap-10 px-5 md:py-40 md:pb-0 py-28 md:flex-row lg:px-20 xl:px-40'>
+				<div className='relative flex w-full flex-col-reverse items-center justify-between md:gap-20 gap-10 px-5 md:py-40 py-28 md:flex-row lg:px-20 xl:px-40'>
 					<Section3Background />
 					<Section3Content />
 					{/* <Section2AnimatedElements scaleSection2={scaleSection2} isMobile={isMobile} /> */}
