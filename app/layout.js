@@ -21,45 +21,45 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
 			<body className={`${outfit.variable} antialiased`}>
-				<header className='fixed top-0 right-0 left-0 z-50 bg-neutral-900'>
-					<div className='mx-auto flex items-center justify-between px-10 py-4 xl:px-40'>
-						<Link href='/'>
-							<Image
-								src={logo}
-								alt='logo'
-								width={200}
-								height={200}
-								quality={100}
-								className='h-auto w-auto'
-							/>
-						</Link>
-						<div className='flex items-center gap-2'>
-							<Button
-								variant='ghost'
-								size='lg'
-								className='text-muted rounded-lg px-5 py-2.5 font-semibold shadow-xs'
-								asChild>
-								<Link href='/sign-in'>Giriş Yap</Link>
-							</Button>
-							<Button
-								variant='primary'
-								size='lg'
-								className='text-muted rounded-lg px-5 py-2.5 font-semibold shadow-xs'
-								asChild>
-								<Link
-									href='/sign-up'
-									className='bg-muted text-primary hover:bg-secondary/80 flex items-center gap-1 rounded-lg px-5 py-2.5 font-semibold shadow-xs'>
-									Kayıt Ol
-									<ChevronRight
-										className='h-6 w-6'
-										strokeWidth={1}
-									/>
-								</Link>
-							</Button>
-						</div>
-					</div>
-				</header>
 				<main className='flex h-screen w-full flex-col items-center'>
+					<header className='w-full bg-neutral-900'>
+						<div className='mx-auto flex items-center justify-between px-10 py-4 xl:px-40'>
+							<Link href='/'>
+								<Image
+									src={logo}
+									alt='logo'
+									width={200}
+									height={200}
+									quality={100}
+									className='h-auto w-auto'
+								/>
+							</Link>
+							<div className='flex items-center gap-2'>
+								<Button
+									variant='ghost'
+									size='lg'
+									className='text-muted rounded-lg px-5 py-2.5 font-semibold shadow-xs'
+									asChild>
+									<Link href='/sign-in'>Giriş Yap</Link>
+								</Button>
+								<Button
+									variant='primary'
+									size='lg'
+									className='text-muted rounded-lg px-5 py-2.5 font-semibold shadow-xs'
+									asChild>
+									<Link
+										href='/sign-up'
+										className='bg-muted text-primary hover:bg-secondary/80 flex items-center gap-1 rounded-lg px-5 py-2.5 font-semibold shadow-xs'>
+										Kayıt Ol
+										<ChevronRight
+											className='h-6 w-6'
+											strokeWidth={1}
+										/>
+									</Link>
+								</Button>
+							</div>
+						</div>
+					</header>
 					{children}
 					<footer className='flex flex-col items-center justify-between bg-neutral-900 w-full text-muted/70 font-medium md:text-sm text-xs gap-10 md:px-40 px-10 md:py-20 py-10 whitespace-nowrap'>
 						<div className='flex flex-col items-center justify-between gap-10 w-full'>
