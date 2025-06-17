@@ -174,13 +174,15 @@ function HomeView() {
                         </div>
                     </div>
                 </div>
-                <Marquee className='h-40 items-center justify-center'>
-                    {MARQUEE_ITEMS.map((item) => (
-                        <div key={item.id} className='flex items-center justify-center h-10'>
-                            <Image src={item.image} alt={item.id} width={500} height={500} className='w-full h-full object-contain' />
-                        </div>
-                    ))}
-                </Marquee>
+                <div className="w-full overflow-hidden">
+                    <Marquee className='h-40 w-full items-center justify-center'>
+                        {MARQUEE_ITEMS.map((item) => (
+                            <div key={item.id} className='flex items-center justify-center h-10 mx-8'>
+                                <Image src={item.image} alt={item.id} width={500} height={500} className='w-full h-full object-contain' />
+                            </div>
+                        ))}
+                    </Marquee>
+                </div>
             </section>
         )
     }, [])
