@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ChevronRight } from 'lucide-react'
 
-// Import all images
+// Image Imports
 import underline1 from '@/public/page-landing/hero/underline-1.png'
 import underline2 from '@/public/page-landing/hero/underline-2.png'
 import underline3 from '@/public/page-landing/hero/underline-3.png'
@@ -25,6 +25,7 @@ import table2 from '@/public/page-landing/section-2/table-2.png'
 import table3 from '@/public/page-landing/section-2/table-3.png'
 import cardGoogleAnalytics from '@/public/page-landing/section-2/card-google-analytics.png'
 import cardShopify from '@/public/page-landing/section-2/card-shopify.png'
+import section3BgImage from '@/public/page-landing/section-3/image-bg.png'
 
 // Configuration constants
 const SCALING_CONFIG = {
@@ -137,14 +138,14 @@ const useResponsiveScale = () => {
 		const calculateScale = (config) => {
 			const width = window.innerWidth
 			const height = window.innerHeight
-			
+
 			const widthScale = width / config.referenceWidth
 			const heightScale = height / config.referenceHeight
-			
+
 			let calculatedScale = Math.min(widthScale, heightScale)
 			calculatedScale = Math.max(calculatedScale, config.minScale)
 			calculatedScale = Math.min(calculatedScale, config.maxScale)
-			
+
 			return Math.round(calculatedScale * 1000) / 1000
 		}
 
@@ -181,7 +182,7 @@ const getScaledStyles = (element, scale) => {
 	if (element.bottom !== undefined) styles.bottom = scalePosition(element.bottom)
 	if (element.left !== undefined) styles.left = scalePosition(element.left)
 	if (element.right !== undefined) styles.right = scalePosition(element.right)
-	
+
 	// Copy other properties
 	if (element.transform) styles.transform = element.transform
 	if (element.zIndex) styles.zIndex = element.zIndex
@@ -190,14 +191,14 @@ const getScaledStyles = (element, scale) => {
 }
 
 // Reusable animated element component
-const AnimatedElement = ({ 
-	src, 
-	alt, 
-	elementConfig, 
-	scale, 
-	className = 'absolute', 
+const AnimatedElement = ({
+	src,
+	alt,
+	elementConfig,
+	scale,
+	className = 'absolute',
 	animation = {},
-	style = {} 
+	style = {}
 }) => {
 	const scaledStyles = getScaledStyles(elementConfig, scale)
 	const imageStyles = {
@@ -374,7 +375,7 @@ const Section2AnimatedElements = ({ scaleSection2, isMobile }) => {
 		height: `${SCALING_CONFIG.section2.containerSize.height * scaleSection2}px`,
 		position: 'absolute',
 		transition: 'all 300ms ease-out',
-		bottom: isMobile ? '150px' : '-40px',
+		bottom: isMobile ? '150px' : '60px',
 		left: '50%',
 		transform: 'translateX(-50%)',
 		display: isMobile ? 'none' : 'flex',
@@ -462,9 +463,48 @@ const Section2Background = () => (
 			exit={{ opacity: 0, y: 50 }}
 			transition={{ duration: 1, ease: "easeOut" }}
 			viewport={{ once: true, amount: 0.3 }}
-			className='z-[1] md:basis-1/2 basis-full h-full min-h-[1000px] block md:hidden'
+			className='z-[1] md:basis-1/2 basis-full h-full md:min-h-[1000px] block md:hidden'
 		>
 			<Image src={bgMobile} alt='hero' width={1400} height={500} />
+		</motion.div>
+	</>
+)
+
+const Section3Content = () => (
+	<div className='z-[40] flex flex-col gap-10 md:basis-1/2 basis-full'>
+		<Badge
+			variant='secondary'
+			className='text-primary rounded-sm bg-purple-100 text-xs font-semibold'>
+			İçerik üreticileri için
+		</Badge>
+		<h1>Favori markalarınızla komisyona dayalı iş birlikleri kurun.</h1>
+		<p className='text-primary/70'>
+			Foundby.me, pazaryerlerine bağlı kalmadan kampanyalara katılmanıza, daha yüksek komisyonlu iş birlikleri yapmanıza  ve performansınızı anlık olarak takip etmenize olanak tanır.
+		</p>
+		<p className='text-primary/70'>
+			Katı kayıt kriterleri olmadan sisteme kolayca dahil olursunuz. Ödemeler düzenli ve şeffaf şekilde yapılır. Markalarla doğrudan çalışarak daha özgür, adil ve sürdürülebilir bir gelir modeliyle kazancınızı artırırsınız.
+		</p>
+		<Button
+			variant='primary'
+			size='lg'
+			className='text-primary font-semibold p-8 flex items-center gap-4 bg-accent hover:bg-accent-foreground border-accent-foreground w-min z-10 cursor-pointer rounded-lg border-1 text-xl transition-all duration-500'>
+			Kayıt Ol
+			<ChevronRight className='!w-6 !h-6' />
+		</Button>
+	</div>
+)
+
+const Section3Background = () => (
+	<>
+		<motion.div
+			initial={{ opacity: 0, y: 50 }}
+			whileInView={{ opacity: 1, scale: 1, y: 0 }}
+			exit={{ opacity: 0, y: 50 }}
+			transition={{ duration: 1, ease: "easeOut" }}
+			viewport={{ once: true, amount: 0.3 }}
+			className='z-[1] md:basis-1/2 basis-full'
+		>
+			<Image src={section3BgImage} alt='hero' width={1400} height={500} />
 		</motion.div>
 	</>
 )
@@ -476,7 +516,7 @@ export default function Home() {
 	return (
 		<div className='flex w-full flex-col items-center justify-center'>
 			<HeroSection scale={scale} />
-			
+
 			<section className='relative w-full bg-[#FFFDF9]'>
 				<div className='relative flex w-full flex-col items-start justify-between md:gap-10 gap-10 px-5 md:py-40 md:pb-0 py-28 md:flex-row lg:px-20 xl:pr-10 xl:px-40'>
 					<Section2Content />
@@ -484,8 +524,14 @@ export default function Home() {
 					<Section2AnimatedElements scaleSection2={scaleSection2} isMobile={isMobile} />
 				</div>
 			</section>
-			
-			<section className='h-screen'>section2</section>
+
+			<section className='relative w-full bg-purple-100'>
+				<div className='relative flex w-full flex-col items-center justify-between md:gap-20 gap-10 px-5 md:py-40 md:pb-0 py-28 md:flex-row lg:px-20 xl:px-40'>
+					<Section3Background />
+					<Section3Content />
+					{/* <Section2AnimatedElements scaleSection2={scaleSection2} isMobile={isMobile} /> */}
+				</div>
+			</section>
 		</div>
 	)
 }
