@@ -48,13 +48,13 @@ const LoginView = () => {
         const togglePasswordVisibility = () => setShowPassword(!showPassword)
 
         return (
-            <div className={`flex w-full lg:w-1/2 items-center justify-center bg-white min-h-screen overflow-y-auto`}>
-                <div className={`w-full space-y-10 py-8 px-20`}>
+            <div className='flex w-full lg:w-1/2 items-center justify-center bg-muted'>
+                <div className='w-full space-y-10 py-8 md:px-20 px-10'>
                     <div className='space-y-2'>
                         <h1 className='text-5xl font-bold text-primary'>Giriş Yap</h1>
                     </div>
 
-                    <form onSubmit={handleSubmit(onSubmit)} className='space-y-10'>
+                    <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
                         {/* Email Field */}
                         <FormField
                             id="email"
@@ -105,7 +105,7 @@ const LoginView = () => {
                                 <span className='w-full border-t border-gray-300' />
                             </div>
                             <div className='relative flex justify-center text-sm'>
-                                <span className='px-2 bg-white text-gray-500'>veya</span>
+                                <span className='px-2 bg-muted text-primary'>veya</span>
                             </div>
                         </div>
 
@@ -116,7 +116,7 @@ const LoginView = () => {
         )
     }
     return (
-        <div className='flex min-h-screen w-full'>
+        <div className='flex w-full h-full min-h-screen md:my-0 my-40'>
             <SignInForm />
             <BackgroundImage />
         </div>

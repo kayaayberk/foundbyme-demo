@@ -5,7 +5,7 @@ import { Instagram } from 'lucide-react'
 
 function Footer() {
     return (
-        <footer className='flex flex-col items-center justify-between bg-primary w-full text-muted/70 font-medium md:text-sm text-xs gap-10 md:px-40 px-10 md:py-20 py-10 whitespace-nowrap'>
+        <footer className='flex flex-col items-center justify-between bg-primary w-full text-muted/70 font-medium md:text-lg text-xs gap-10 md:px-40 px-10 md:py-20 py-10 whitespace-nowrap'>
             <div className='flex flex-col items-center justify-between gap-10 w-full'>
                 <div className='w-full'>
                     <Link href='/' className='w-40'>
@@ -31,7 +31,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
-            <div className='flex md:flex-row flex-col w-full justify-between md:items-center items-start md:gap-10 gap-2'>
+            <div className='flex md:flex-row flex-col w-full justify-center md:items-center items-start md:gap-10 gap-2'>
                 <Link href='#'>Gizlilik Politikası</Link>
                 <Link href='#'>Kullanıcı Sözleşmesi</Link>
                 <Link href='#'>KVKK Aydınlatma Metni</Link>
