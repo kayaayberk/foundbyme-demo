@@ -1,4 +1,4 @@
-import LoginView from "@/components/views/signup-view"
+import LoginView from '@/components/views/signup-view'
 
 export const metadata = {
 	title: 'Foundby.me - Kayıt Ol',

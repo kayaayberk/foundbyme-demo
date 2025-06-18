@@ -1,4 +1,4 @@
-import LoginView from "@/components/views/login-view"
+import LoginView from '@/components/views/login-view'
 
 export const metadata = {
 	title: 'Foundby.me - Giriş Yap',

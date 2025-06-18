@@ -163,20 +163,20 @@
 	--shadow-2xl: var(--shadow-2xl);
 	--animate-marquee: marquee var(--duration) infinite linear;
 	--animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
-  @keyframes marquee {
-  from {
-    transform: translateX(0);
+	@keyframes marquee {
+		from {
+			transform: translateX(0);
 		}
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
+		to {
+			transform: translateX(calc(-100% - var(--gap)));
 		}
 	}
-  @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);
+	@keyframes marquee-vertical {
+		from {
+			transform: translateY(0);
 		}
-  to {
-    transform: translateY(calc(-100% - var(--gap)));
+		to {
+			transform: translateY(calc(-100% - var(--gap)));
 		}
 	}
 }
@@ -191,10 +191,10 @@
 	}
 
 	h1 {
-		@apply text-[30px] leading-[40px] font-bold lg:text-[40px] xl:text-[52px] xl:leading-[55px] text-primary;
+		@apply text-primary text-[30px] leading-[40px] font-bold lg:text-[40px] xl:text-[52px] xl:leading-[55px];
 	}
 
 	p {
-		@apply flex flex-col gap-0.5 text-[16px] font-[400] lg:text-[22px] xl:text-[22px] xl:leading-[30px] text-primary/70;
+		@apply text-primary/70 flex flex-col gap-0.5 text-[16px] font-[400] lg:text-[22px] xl:text-[22px] xl:leading-[30px];
 	}
 }
