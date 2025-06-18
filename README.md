@@ -1,6 +1,9 @@
 # Foundby.me Demo
 
-Prepared as a demo for foundby.me
+<div align="center">
+  <img src="./public/cover.png" alt="Foundby.me Logo" width="1400" />
+  <p><strong>Prepared as a demo for foundby.me</strong></p>
+</div>
 
 ## 🚀 Tech Stack
 
@@ -29,4 +32,4 @@ foundbyme-demo/
 └── public/                # Static assets
 ```
 
-Built with ❤️ - Ayberk
+#### Built with ❤️ - Ayberk
